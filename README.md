@@ -22,5 +22,8 @@ Python Developer's Test Assignment
 <a name="project_structure"></a> 
 # Project structure
     Secunda
+    ├── api/                                    # FastAPI
+    │   ├── PASS
+    │   └── PASS
     └── README.md                               # Project documentation 
 <br /> <br />
