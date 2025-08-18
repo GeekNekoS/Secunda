@@ -22,5 +22,8 @@ class Base(DeclarativeBase):
 
     @classmethod
     def bulk_update(cls, session: Session, filter_dict: dict, update_dict: dict):
-        session.query(cls).filter_by(**filter_dict).update(update_dict, synchronize_session=False)
+        session.query(cls).filter_by(**filter_dict).update(
+            update_dict,
+            synchronize_session=False
+        )
         session.commit()

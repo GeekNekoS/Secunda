@@ -10,4 +10,7 @@ class Phone(Base):
     organization_id = Column(Integer, ForeignKey("organization.id"))
     phone = Column(String, nullable=False)
 
-    organization = relationship("Organization", back_populates="phones")
+    organization = relationship(
+        "Organization",
+        back_populates="phones"
+    )

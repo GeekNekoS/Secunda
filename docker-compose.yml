@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  postgres_db:
+    image: postgres:latest
+    container_name: secunda_postgresdb
+    environment:
+      # Переменные инициализации PG для API
+      POSTGRES_DB: ${POSTGRES_DB_NAME}
+      POSTGRES_USER: ${POSTGRES_DB_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_DB_PASSWORD}
+    ports:
+      - "${POSTGRES_DB_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - secunda_network
+
+volumes:
+  postgres_data:
+
+networks:
+  secunda_network:
+    driver: bridge

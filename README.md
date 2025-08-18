@@ -22,8 +22,27 @@ Python Developer's Test Assignment
 <a name="project_structure"></a> 
 # Project structure
     Secunda
-    ├── api/                                    # FastAPI
-    │   ├── PASS
-    │   └── PASS
-    └── README.md                               # Project documentation 
+    ├── api/   
+    │   ├── alembic/
+    │   │   ├── versions/
+    │   │   ├── env.py
+    │   │   └── script.py.mako                 
+    │   ├── models/
+    │   │   ├── __init__.py
+    │   │   ├── activity.py
+    │   │   ├── base.py
+    │   │   ├── office.py
+    │   │   ├── organization.py
+    │   │   ├── organization_activity_assoc.py
+    │   │   └── phone.py
+    │   ├── __init__.py
+    │   ├── alembic.ini
+    │   └── config.py
+    ├── .env
+    ├── .env.example
+    ├── .gitignore
+    ├── docker-compose.yml
+    ├── README.md                               # Project documentation
+    ├── requirements.txt
+    └── Secunda.drawio.png                      # The structure of the Postgres database
 <br /> <br />
