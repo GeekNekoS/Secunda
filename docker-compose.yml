@@ -1,11 +1,8 @@
-version: '3.9'
-
 services:
   postgres_db:
     image: postgres:latest
     container_name: secunda_postgresdb
     environment:
-      # Переменные инициализации PG для API
       POSTGRES_DB: ${POSTGRES_DB_NAME}
       POSTGRES_USER: ${POSTGRES_DB_USER}
       POSTGRES_PASSWORD: ${POSTGRES_DB_PASSWORD}
@@ -13,6 +10,23 @@ services:
       - "${POSTGRES_DB_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - secunda_network
+
+  api:
+    build:
+      context: ./api
+    container_name: secunda_api
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_DB_USER}:${POSTGRES_DB_PASSWORD}@postgres_db:${POSTGRES_DB_PORT}/${POSTGRES_DB_NAME}
+      API_KEY: ${API_KEY}
+    volumes:
+      - ./api:/app
+    depends_on:
+      - postgres_db
     networks:
       - secunda_network
 

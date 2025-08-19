@@ -19,6 +19,7 @@ Python Developer's Test Assignment
 4. `docker-compose up -d`
 5. Create a migration `alembic -c api/alembic.ini revision --autogenerate -m "Create all models"`
 6. Apply Migration `alembic -c api/alembic.ini upgrade head`
+7. Generate test data: `python api/gen_test_data.py`
 <br /> <br />
 
 
@@ -47,13 +48,15 @@ Python Developer's Test Assignment
     │   ├── alembic.ini
     │   ├── app.py
     │   ├── config.py
-    │   └── main.py
+    │   ├── Dockerfile
+    │   ├── gen_test_data.py
+    │   ├── main.py
+    │   └── requirements-api.txt
+    ├── .dockerignore
     ├── .env
     ├── .env.example
     ├── .gitignore
     ├── docker-compose.yml
     ├── README.md                               # Project documentation
-    ├── gen_test_data.py
-    ├── requirements.txt
     └── Secunda.drawio.png                      # The structure of the Postgres database
 <br /> <br />
