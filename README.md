@@ -26,7 +26,12 @@ Python Developer's Test Assignment
     │   ├── alembic/
     │   │   ├── versions/
     │   │   ├── env.py
-    │   │   └── script.py.mako                 
+    │   │   └── script.py.mako   
+    │   ├── endpoints/
+    │   │   ├── organizations.py
+    │   │   ├── buildings.py
+    │   │   ├── search.py
+    │   │   └── __init__.py
     │   ├── models/
     │   │   ├── __init__.py
     │   │   ├── activity.py
@@ -37,12 +42,15 @@ Python Developer's Test Assignment
     │   │   └── phone.py
     │   ├── __init__.py
     │   ├── alembic.ini
-    │   └── config.py
+    │   ├── app.py
+    │   ├── config.py
+    │   └── main.py
     ├── .env
     ├── .env.example
     ├── .gitignore
     ├── docker-compose.yml
     ├── README.md                               # Project documentation
+    ├── gen_test_data.py
     ├── requirements.txt
     └── Secunda.drawio.png                      # The structure of the Postgres database
 <br /> <br />
