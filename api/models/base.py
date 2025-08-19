@@ -1,3 +1,4 @@
+# api/models/base.py
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker, Session
 from dotenv import load_dotenv

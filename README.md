@@ -16,6 +16,9 @@ Python Developer's Test Assignment
 1. Select the Python version: 3.11 (Work through the `Linux` console or `WSL`)
 2. Fill in the environment variables in `.env`. Example - `.env.example`
 3. Make sure that Docker is installed on your device
+4. `docker-compose up -d`
+5. Create a migration `alembic -c api/alembic.ini revision --autogenerate -m "Create all models"`
+6. Apply Migration `alembic -c api/alembic.ini upgrade head`
 <br /> <br />
 
 
