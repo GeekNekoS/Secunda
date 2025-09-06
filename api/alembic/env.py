@@ -15,11 +15,11 @@ from api.models import (
     organization_activity_assoc,
     phone
 )
-from api.config import settings
+from api.core.config import settings
 
 
 config = context.config
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+config.set_main_option("sqlalchemy.url", settings.POSTGRES_DB_URL)
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
